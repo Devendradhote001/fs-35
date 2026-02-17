@@ -8,6 +8,10 @@
 
 // console.log(hof()()());
 
+// let a = hof();
+// let b = a();
+// b();
+
 // closure--
 
 // {
@@ -85,12 +89,108 @@
 //   mobile: 7654343221,
 //   email: "danesh@gmail.com",
 // };
+
 // // destructuring...
 
-// let { company, email, mobile } = danesh;
+// let { mobile, suranme, email } = danesh;
+// console.log(mobile, suranme, email);
 
-let arr = [10, 40];
+// let arr = [10, 40];
 
-let [score, count] = arr;
+// let [score, count] = arr;
 
-console.log(score, count);
+// console.log(score, count);
+
+// --------------------------------------------
+
+// pure and impure function----
+
+// let fn = () => {
+//   let a = 7;
+//   a++;
+//   return a;
+// };
+
+// let b = 7;
+
+// let fn2 = () => {
+//   b++;
+//   return b;
+// };
+
+// console.log(fn2());
+
+// console.log(fn());
+
+// event loop--------
+
+// -----------
+
+// console.log("hello");
+
+// setTimeout(() => {
+//   console.log("i m in timeout");
+// }, 0);
+
+// console.log("bye");
+
+// setTimeout(() => {
+//   console.log("i m in timeout 2");
+// }, 0);
+
+// console.log("herorooooo...");
+
+// promises;
+
+// methods---
+
+// foreach
+// map
+// filter
+// reduce
+// some
+// every
+
+// for of
+// for in
+
+// ----------------------Promises----------------------
+
+let promVal = new Promise((res, rej) => {
+  let partyOnMonday = true;
+  if (partyOnMonday) {
+    return res({ hotel: "Taj hotel" });
+  }
+  return rej("Bhaiya ka man nahi hai");
+});
+
+// promise handlers-----
+
+// before es6---
+
+console.log("hello");
+
+setTimeout(() => {
+  console.log("timeout 1");
+}, 0);
+setTimeout(() => {
+  console.log("timeout 2");
+}, 0);
+setTimeout(() => {
+  console.log("timeout 3");
+}, 0);
+
+promVal
+  .then((val) => {
+    console.log("me value hu->", val);
+  })
+  .catch((err) => console.log("me error hu->", err));
+
+console.log("byee");
+
+// .then()
+// .catch()
+
+// from es6---
+
+// async await
