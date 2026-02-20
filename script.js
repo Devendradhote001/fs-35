@@ -156,37 +156,37 @@
 
 // ----------------------Promises----------------------
 
-let promVal = new Promise((res, rej) => {
-  let partyOnMonday = true;
-  if (partyOnMonday) {
-    return res({ hotel: "Taj hotel" });
-  }
-  return rej("Bhaiya ka man nahi hai");
-});
+// let promVal = new Promise((res, rej) => {
+//   let partyOnMonday = true;
+//   if (partyOnMonday) {
+//     return res({ hotel: "Taj hotel" });
+//   }
+//   return rej("Bhaiya ka man nahi hai");
+// });
 
-// promise handlers-----
+// // promise handlers-----
 
-// before es6---
+// // before es6---
 
-console.log("hello");
+// console.log("hello");
 
-setTimeout(() => {
-  console.log("timeout 1");
-}, 0);
-setTimeout(() => {
-  console.log("timeout 2");
-}, 0);
-setTimeout(() => {
-  console.log("timeout 3");
-}, 0);
+// setTimeout(() => {
+//   console.log("timeout 1");
+// }, 0);
+// setTimeout(() => {
+//   console.log("timeout 2");
+// }, 0);
+// setTimeout(() => {
+//   console.log("timeout 3");
+// }, 0);
 
-promVal
-  .then((val) => {
-    console.log("me value hu->", val);
-  })
-  .catch((err) => console.log("me error hu->", err));
+// promVal
+//   .then((val) => {
+//     console.log("me value hu->", val);
+//   })
+//   .catch((err) => console.log("me error hu->", err));
 
-console.log("byee");
+// console.log("byee");
 
 // .then()
 // .catch()
@@ -194,3 +194,83 @@ console.log("byee");
 // from es6---
 
 // async await
+
+// ----------------------------------
+
+// let prom = new Promise((res, rej) => {
+//   return res("ok");
+// });
+
+// console.log(prom);
+
+// fetch---
+
+// fetch -> jo tumhe server se connect krta hai
+
+// jab bhi ham fetch use krte hai to hame 2 then use krne padte hai
+// or pehle then me hame .json() use krna padta hai...
+
+// let response = fetch("https://fakestoreapi.com/products");
+
+// response
+//   .then((val) => val.json())
+//   .then((val) => console.log(val))
+//   .catch((err) => console.log(err));
+
+// -----------------------------------------------
+
+// array methods --
+
+// foreach
+
+// map
+// filter
+// reduce
+// some
+// every
+
+// for in
+// for off
+
+// foreach kuch bhi return nahi krta
+// map hamesha array return krega
+
+// let save = arr.map((elem) => {
+//   return elem
+// });
+
+// reduce---
+
+// -------------
+
+// let save = arr.reduce((sum, c) => (sum += c), 0);
+
+// console.log(save);
+
+// --------------------------
+
+// filter---
+
+let arr = [
+  "apple",
+  "mango",
+  "banana",
+  "blue berry",
+  "chiku",
+  "cherry",
+  "strawberry",
+  "avocado",
+];
+
+let filterFruits = (search) => {
+  return arr.filter((val) => val.startsWith(search));
+};
+
+console.log(filterFruits("b"));
+
+// foreach -> return nahi krta hu
+// map -> return bhi karta hu or traverse bhi or agr condition tabbi me
+// pura array dunga bs boolean me
+
+// reduce -> calculations and all k liye retun  krega single value
+// filter-> filter krunga according to need or new array dunga changes krke
