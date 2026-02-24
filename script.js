@@ -251,22 +251,22 @@
 
 // filter---
 
-let arr = [
-  "apple",
-  "mango",
-  "banana",
-  "blue berry",
-  "chiku",
-  "cherry",
-  "strawberry",
-  "avocado",
-];
+// let arr = [
+//   "apple",
+//   "mango",
+//   "banana",
+//   "blue berry",
+//   "chiku",
+//   "cherry",
+//   "strawberry",
+//   "avocado",
+// ];
 
-let filterFruits = (search) => {
-  return arr.filter((val) => val.startsWith(search));
-};
+// let filterFruits = (search) => {
+//   return arr.filter((val) => val.startsWith(search));
+// };
 
-console.log(filterFruits("b"));
+// console.log(filterFruits("b"));
 
 // foreach -> return nahi krta hu
 // map -> return bhi karta hu or traverse bhi or agr condition tabbi me
@@ -274,3 +274,281 @@ console.log(filterFruits("b"));
 
 // reduce -> calculations and all k liye retun  krega single value
 // filter-> filter krunga according to need or new array dunga changes krke
+
+// ------data getting-----
+
+// let arr = [
+//   {
+//     employeeId: "EMP001",
+//     personalInfo: {
+//       name: {
+//         firstName: "Rahul",
+//         lastName: "Sharma",
+//       },
+//       contact: {
+//         email: "rahul.sharma@company.com",
+//         phone: {
+//           countryCode: "+91",
+//           number: "9876543210",
+//         },
+//       },
+//     },
+//     company: {
+//       name: "TechNova Pvt Ltd",
+//       location: {
+//         country: "India",
+//         state: "Madhya Pradesh",
+//         city: "Bhopal",
+//       },
+//       department: {
+//         name: "Engineering",
+//         team: {
+//           teamName: "Frontend Team",
+//           teamLead: {
+//             id: "EMP010",
+//             name: "Ankit Verma",
+//           },
+//           projects: [
+//             {
+//               projectId: "PROJ101",
+//               projectName: "E-Commerce App",
+//               tasks: [
+//                 {
+//                   taskId: "TASK001",
+//                   title: "Product Listing UI",
+//                   status: "In Progress",
+//                   logs: {
+//                     daily: {
+//                       day: "Monday",
+//                       hours: {
+//                         frontend: {
+//                           html: 2,
+//                           css: 3,
+//                           js: {
+//                             logic: 2,
+//                             debugging: {
+//                               timeSpent: "1 hour",
+//                               issuesFixed: 3,
+//                             },
+//                           },
+//                         },
+//                       },
+//                     },
+//                   },
+//                 },
+//               ],
+//             },
+//           ],
+//         },
+//       },
+//     },
+//   },
+
+//   {
+//     employeeId: "EMP002",
+//     personalInfo: {
+//       name: {
+//         firstName: "Priya",
+//         lastName: "Mehta",
+//       },
+//       contact: {
+//         email: "priya.mehta@company.com",
+//         phone: {
+//           countryCode: "+91",
+//           number: "9123456780",
+//         },
+//       },
+//     },
+//     company: {
+//       name: "TechNova Pvt Ltd",
+//       location: {
+//         country: "India",
+//         state: "Maharashtra",
+//         city: "Pune",
+//       },
+//       department: {
+//         name: "Engineering",
+//         team: {
+//           teamName: "Backend Team",
+//           teamLead: {
+//             id: "EMP011",
+//             name: "Rohit Kulkarni",
+//           },
+//           projects: [
+//             {
+//               projectId: "PROJ102",
+//               projectName: "Payment Gateway",
+//               tasks: [
+//                 {
+//                   taskId: "TASK002",
+//                   title: "Stripe Integration",
+//                   status: "Completed",
+//                   logs: {
+//                     weekly: {
+//                       week: "Week 2",
+//                       performance: {
+//                         api: {
+//                           successRate: "99%",
+//                           errors: {
+//                             timeout: 1,
+//                             auth: {
+//                               invalidToken: 2,
+//                               expiredToken: {
+//                                 count: 1,
+//                                 resolved: true,
+//                               },
+//                             },
+//                           },
+//                         },
+//                       },
+//                     },
+//                   },
+//                 },
+//               ],
+//             },
+//           ],
+//         },
+//       },
+//     },
+//   },
+
+//   {
+//     employeeId: "EMP003",
+//     personalInfo: {
+//       name: {
+//         firstName: "Aman",
+//         lastName: "Khan",
+//       },
+//     },
+//     company: {
+//       department: {
+//         team: {
+//           projects: [
+//             {
+//               tasks: [
+//                 {
+//                   logs: {
+//                     system: {
+//                       access: {
+//                         permissions: {
+//                           read: true,
+//                           write: false,
+//                           advanced: {
+//                             admin: {
+//                               allowed: false,
+//                               reason: "Role Restriction",
+//                             },
+//                           },
+//                         },
+//                       },
+//                     },
+//                   },
+//                 },
+//               ],
+//             },
+//           ],
+//         },
+//       },
+//     },
+//   },
+
+//   {
+//     employeeId: "EMP004",
+//     company: {
+//       department: {
+//         team: {
+//           projects: [
+//             {
+//               tasks: [
+//                 {
+//                   logs: {
+//                     meta: {
+//                       createdBy: {
+//                         system: {
+//                           environment: {
+//                             prod: {
+//                               server: {
+//                                 region: "Asia",
+//                                 zone: "ap-south-1a",
+//                               },
+//                             },
+//                           },
+//                         },
+//                       },
+//                     },
+//                   },
+//                 },
+//               ],
+//             },
+//           ],
+//         },
+//       },
+//     },
+//   },
+
+//   {
+//     employeeId: "EMP005",
+//     company: {
+//       department: {
+//         team: {
+//           projects: [
+//             {
+//               tasks: [
+//                 {
+//                   logs: {
+//                     tracking: {
+//                       time: {
+//                         day: {
+//                           hours: {
+//                             coding: {
+//                               feature: {
+//                                 name: "Dashboard",
+//                                 complexity: {
+//                                   level: "High",
+//                                   reason: {
+//                                     ui: "Dynamic Charts",
+//                                     data: {
+//                                       source: "API",
+//                                       format: "JSON",
+//                                     },
+//                                   },
+//                                 },
+//                               },
+//                             },
+//                           },
+//                         },
+//                       },
+//                     },
+//                   },
+//                 },
+//               ],
+//             },
+//           ],
+//         },
+//       },
+//     },
+//   },
+// ];
+
+let api = fetch("https://fakestoreapi.com/product");
+
+// promise hanlder
+
+// api
+//   .then((val) => val.json())
+//   .then((elem) => console.log(elem))
+//   .catch((err) => console.log(err));
+
+// async await
+
+let resolver = async () => {
+  try {
+    let res = (await api).json();
+    let fin = await res;
+    console.log(fin);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+resolver();
