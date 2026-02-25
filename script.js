@@ -530,7 +530,7 @@
 //   },
 // ];
 
-let api = fetch("https://fakestoreapi.com/product");
+// let api = fetch("https://fakestoreapi.com/product");
 
 // promise hanlder
 
@@ -541,14 +541,70 @@ let api = fetch("https://fakestoreapi.com/product");
 
 // async await
 
-let resolver = async () => {
-  try {
-    let res = (await api).json();
-    let fin = await res;
-    console.log(fin);
-  } catch (error) {
-    console.log(error);
-  }
-};
+// let resolver = async () => {
+//   try {
+//     let res = (await api).json();
+//     let fin = await res;
+//     console.log(fin);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
-resolver();
+// resolver();
+
+// filter
+// // promises - async await
+// reduce
+// map
+
+let arr = [
+  {
+    name: "Rahul",
+    age: 80,
+  },
+  {
+    name: "Naman",
+    age: 82,
+  },
+  {
+    name: "Manish",
+    age: 83,
+  },
+  {
+    name: "Rishi",
+    age: 81,
+  },
+];
+
+// destructuring
+
+let obj = { name: "piyush", age: 90 };
+
+// 1. return karega
+// 2. return array hoga same length ka
+// 3. age return me condition di to hamesha boolean with array
+
+// let res = arr.map(({ name, age }) => {
+//   return name == "Rahul";
+// });
+
+// console.log(res);
+
+let main = document.querySelector("main");
+console.log(arr);
+
+arr.forEach((elem, index) => {
+  main.innerHTML += `<p id="${index}">${elem.name}</p>`;
+});
+
+main.addEventListener("click", (dets) => {
+  deleteName(dets.target.id);
+});
+
+let deleteName = (id) => {
+  let newArr = arr.filter((elem, index) => {
+    return index != id;
+  });
+  console.log(newArr);
+};
